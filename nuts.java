@@ -1,19 +1,19 @@
 
 /**
- * Beschreiben Sie hier die Klasse diesenüsse.
+ * Beschreiben Sie hier die Klasse nuts.
  * 
  * @author (Ihr Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class diesenüsse
+public class nuts
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private int x;
 
     /**
-     * Konstruktor für Objekte der Klasse diesenüsse
+     * Konstruktor für Objekte der Klasse nuts
      */
-    public diesenüsse()
+    public nuts()
     {
         // Instanzvariable initialisieren
         x = 0;
