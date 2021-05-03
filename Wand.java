@@ -1,19 +1,19 @@
 
 /**
- * Beschreiben Sie hier die Klasse GRUNDRISS.
+ * Beschreiben Sie hier die Klasse Wand.
  * 
  * @author (Ihr Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class GRUNDRISS
+public class Wand
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private int x;
 
     /**
-     * Konstruktor für Objekte der Klasse GRUNDRISS
+     * Konstruktor für Objekte der Klasse Wand
      */
-    public GRUNDRISS()
+    public Wand()
     {
         // Instanzvariable initialisieren
         x = 0;
