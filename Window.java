@@ -22,6 +22,8 @@ public class Window {
 		//Fenster bearbeiten
 		frame. getContentPane (). setBackground (new Color (99, 9, 92));
 		
+		Insets i = frame.getInsets();
+                frame. setSize (breiteFenster, hoeheFenster + i.top);
 		JComponent hintergrund = new JComponent ()
                 {
                      /**
