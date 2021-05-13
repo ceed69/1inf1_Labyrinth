@@ -10,18 +10,18 @@ import javax. swing. *;
 class OBERFLAECHE
 {
     /** Diese Werte kann man bearbeiten um das Fenster zu verändern bitte andere Variablen nicht ändern */
-    
+
     /** Anzeigegröße für eine Rasterkachel */
     private static final int rasterGroesse = 40;
     /** Höhe des Anzeigefensters */
-    private static final int hoeheFenster = 600;
+    private static final int hoeheFenster = rasterGroesse*20;
     /** Breite des Anzeigefensters */
-    private static final int breiteFenster = 600;
+    private static final int breiteFenster = rasterGroesse*20;
     /** Name des Anzeigefensters */
     private static final String titelFenster = "Labyrinth";
-    
+
     /** --------------------------------------------------------------------------------------------- */
-    
+
     private static OBERFLAECHE o = null;
     private JFrame fenster = null;
 
@@ -34,32 +34,32 @@ class OBERFLAECHE
         fenster. setResizable (false);
         fenster. setVisible (true);
         fenster. setLayout (null);
-        fenster. getContentPane (). setBackground (new Color (240, 240, 240));
+        fenster. getContentPane (). setBackground (new Color (255, 255, 255));
         Insets i = fenster.getInsets();
         fenster. setSize (breiteFenster, hoeheFenster + i.top);         // Ausgleich für Fenstertitel
         JComponent hintergrund = new JComponent ()
-        {
-             /**
-             * Zeichnet das Hintergrundmuster.
-             */
-            public void paintComponent (Graphics g)
             {
-                g. setColor (Color. black);
-                for (int i = 1; i <= hoeheFenster / (rasterGroesse * 2); i++)
+                /**
+                 * Zeichnet das Hintergrundmuster.
+                 */
+                public void paintComponent (Graphics g)
                 {
-                    g. drawLine (0, hoeheFenster / 2 + i * rasterGroesse, breiteFenster - 1, hoeheFenster / 2 + i * rasterGroesse);
-                    g. drawLine (0, hoeheFenster / 2 - i * rasterGroesse, breiteFenster - 1, hoeheFenster / 2 - i * rasterGroesse);
+                    g. setColor (Color. black);
+                    for (int i = 1; i <= hoeheFenster / (rasterGroesse * 2); i++)
+                    {
+                        g. drawLine (0, hoeheFenster / 2 + i * rasterGroesse, breiteFenster - 1, hoeheFenster / 2 + i * rasterGroesse);
+                        g. drawLine (0, hoeheFenster / 2 - i * rasterGroesse, breiteFenster - 1, hoeheFenster / 2 - i * rasterGroesse);
+                    }
+                    for (int i = 1; i <= breiteFenster / (rasterGroesse * 2); i++)
+                    {
+                        g. drawLine (breiteFenster / 2 + i * rasterGroesse, 0, breiteFenster / 2 + i * rasterGroesse, hoeheFenster - 1);
+                        g. drawLine (breiteFenster / 2 - i * rasterGroesse, 0, breiteFenster / 2 - i * rasterGroesse, hoeheFenster - 1);
+                    }
+                    g. setColor (Color. black);
+                    g. drawLine (0, hoeheFenster / 2, breiteFenster - 1, hoeheFenster / 2);
+                    g. drawLine (breiteFenster / 2, 0, breiteFenster / 2, hoeheFenster - 1);
                 }
-                for (int i = 1; i <= breiteFenster / (rasterGroesse * 2); i++)
-                {
-                    g. drawLine (breiteFenster / 2 + i * rasterGroesse, 0, breiteFenster / 2 + i * rasterGroesse, hoeheFenster - 1);
-                    g. drawLine (breiteFenster / 2 - i * rasterGroesse, 0, breiteFenster / 2 - i * rasterGroesse, hoeheFenster - 1);
-                }
-                g. setColor (Color. black);
-                g. drawLine (0, hoeheFenster / 2, breiteFenster - 1, hoeheFenster / 2);
-                g. drawLine (breiteFenster / 2, 0, breiteFenster / 2, hoeheFenster - 1);
-            }
-        };
+            };
         hintergrund. setVisible (true);
         hintergrund. setSize (breiteFenster, hoeheFenster);
         hintergrund. setLocation (0, 0);

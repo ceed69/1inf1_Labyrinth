@@ -44,7 +44,7 @@ class RANDSYMBOL
             // Stellt das Rumpfelement auf dem Fenster dar.
             public void paintComponent (Graphics g)
             {
-                g. setColor (Color. lightGray);
+                g. setColor (Color. black);
                 int [] xKoord = {0, getWidth (), getWidth (), 0, 0, groesse, groesse, getWidth () - groesse, getWidth () - groesse, groesse, 0};
                 int [] yKoord = {0, 0, getHeight (), getHeight (), 0, groesse, getHeight () - groesse, getHeight () - groesse, groesse, groesse, 0};
                 g. fillPolygon(xKoord, yKoord, xKoord.length);
