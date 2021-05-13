@@ -6,25 +6,25 @@ public class Window {
 
         public static final int rasterGroesse = 30;
         public static final int breiteFenster = rasterGroesse * 30;
-	public static final int hoeheFenster = rasterGroesse * 30;
-	public Window(int width, int height, String title) {
-		JFrame frame = new JFrame(title);
-		//frame.add(game);
-		//Fenster init
-		frame.setMinimumSize(new Dimension(width, height));
-		frame.setPreferredSize(new Dimension(width, height));
-		frame.setMaximumSize(new Dimension(width, height));
-		frame.setResizable(false);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
+    public static final int hoeheFenster = rasterGroesse * 30;
+    public Window(int width, int height, String title) {
+        JFrame frame = new JFrame(title);
+        //frame.add(game);
+        //Fenster init
+        frame.setMinimumSize(new Dimension(width, height));
+        frame.setPreferredSize(new Dimension(width, height));
+        frame.setMaximumSize(new Dimension(width, height));
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
                 
-		//Fenster bearbeiten
-		frame. getContentPane (). setBackground (new Color (99, 9, 92));
-		
-		Insets i = frame.getInsets();
+        //Fenster bearbeiten
+        frame. getContentPane (). setBackground (new Color (99, 9, 92));
+        
+        Insets i = frame.getInsets();
                 frame. setSize (breiteFenster, hoeheFenster + i.top);
-		JComponent hintergrund = new JComponent ()
+        JComponent hintergrund = new JComponent ()
                 {
                      /**
                      * Zeichnet das Hintergrundmuster.
@@ -52,12 +52,12 @@ public class Window {
                 hintergrund. setLocation (0, 0);
                 frame. add (hintergrund);
             }
-	
+    
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//Game game = new Game();
-		new Window(breiteFenster, hoeheFenster, "Labyrinth");
-	}
+    public static void main() {
+        // TODO Auto-generated method stub
+        //Game game = new Game();
+        new Window(breiteFenster, hoeheFenster, "Labyrinth");
+    }
 
 }
