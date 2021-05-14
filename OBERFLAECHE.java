@@ -14,11 +14,15 @@ class OBERFLAECHE
     /** Anzeigegröße für eine Rasterkachel */
     private static final int rasterGroesse = 40;
     /** Höhe des Anzeigefensters */
-    private static final int hoeheFenster = rasterGroesse*20;
+    private static final int hoeheFenster = rasterGroesse*24;
     /** Breite des Anzeigefensters */
-    private static final int breiteFenster = rasterGroesse*20;
+    private static final int breiteFenster = rasterGroesse*24;
     /** Name des Anzeigefensters */
     private static final String titelFenster = "Labyrinth";
+    /** Farbe des Hintegrundes */
+    private static final Color farbeHintergrund = new Color (171, 196, 235);
+    /** Farbe der Streifen und des Randes */
+    private static final Color farbeStreifen = new Color (57, 69, 54);
 
     /** --------------------------------------------------------------------------------------------- */
 
@@ -34,7 +38,7 @@ class OBERFLAECHE
         fenster. setResizable (false);
         fenster. setVisible (true);
         fenster. setLayout (null);
-        fenster. getContentPane (). setBackground (new Color (255, 255, 255));
+        fenster. getContentPane (). setBackground (farbeHintergrund);
         Insets i = fenster.getInsets();
         fenster. setSize (breiteFenster, hoeheFenster + i.top);         // Ausgleich für Fenstertitel
         JComponent hintergrund = new JComponent ()
@@ -44,7 +48,7 @@ class OBERFLAECHE
                  */
                 public void paintComponent (Graphics g)
                 {
-                    g. setColor (Color. black);
+                    g. setColor (farbeStreifen);
                     for (int i = 1; i <= hoeheFenster / (rasterGroesse * 2); i++)
                     {
                         g. drawLine (0, hoeheFenster / 2 + i * rasterGroesse, breiteFenster - 1, hoeheFenster / 2 + i * rasterGroesse);
@@ -55,7 +59,7 @@ class OBERFLAECHE
                         g. drawLine (breiteFenster / 2 + i * rasterGroesse, 0, breiteFenster / 2 + i * rasterGroesse, hoeheFenster - 1);
                         g. drawLine (breiteFenster / 2 - i * rasterGroesse, 0, breiteFenster / 2 - i * rasterGroesse, hoeheFenster - 1);
                     }
-                    g. setColor (Color. black);
+                    g. setColor (farbeStreifen);
                     g. drawLine (0, hoeheFenster / 2, breiteFenster - 1, hoeheFenster / 2);
                     g. drawLine (breiteFenster / 2, 0, breiteFenster / 2, hoeheFenster - 1);
                 }
@@ -104,6 +108,9 @@ class OBERFLAECHE
     static int FensterHoeheGeben ()
     {
         return hoeheFenster;
+    }
+    static Color SteifenFarbeGeben(){
+        return farbeStreifen;
     }
 }
 
