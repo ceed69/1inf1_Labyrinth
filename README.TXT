@@ -1,1 +1,1 @@
-Labyrinth Spiel mit blueJ  :)
+Labyrinth Spiel mit blueJ  :^)
