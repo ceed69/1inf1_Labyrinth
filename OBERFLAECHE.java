@@ -20,9 +20,9 @@ class OBERFLAECHE
     /** Name des Anzeigefensters */
     private static final String titelFenster = "Labyrinth";
     /** Farbe des Hintegrundes */
-    private static final Color farbeHintergrund = new Color (171, 196, 235);
+    private static final Color farbeHintergrund = new Color (255, 255, 255);
     /** Farbe der Streifen und des Randes */
-    private static final Color farbeStreifen = new Color (57, 69, 54);
+    private static final Color farbeStreifen = new Color (0, 0, 0);
 
     /** --------------------------------------------------------------------------------------------- */
 
