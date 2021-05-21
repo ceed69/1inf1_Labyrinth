@@ -19,7 +19,7 @@ public class SPIELERSYMBOL
     private static int radius = groesse / 4;
     private int x;
     private int y;
-    private char ausrichtung;
+    public char ausrichtung;
     private JComponent anzeige;
     
     SPIELERSYMBOL()

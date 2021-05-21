@@ -14,6 +14,7 @@ public class SPIEL
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     SPIELER spieler;
     RANDSYMBOL randsymbol;
+    FELDER felder;
     /**
      * Konstruktor für Objekte der Klasse SPIEL
      */
@@ -21,6 +22,8 @@ public class SPIEL
     {
         randsymbol = new RANDSYMBOL();
         spieler = new SPIELER (0, 0, 'O');
+        felder = new FELDER();
+        
         OBERFLAECHE. FensterGeben (). addKeyListener (new KeyAdapter() {
             /**
              * Gibt die Taste an die eigentliche Aktionsmethode weiter.
@@ -39,22 +42,26 @@ public class SPIEL
         {
           case KeyEvent. VK_DOWN:
             spieler. RichtungSetzen ('S');
-            if(spieler.spieler.YPositionGeben() != randsymbol.YMaxGeben()){
+            if(spieler.spieler.YPositionGeben() != randsymbol.YMaxGeben() && 
+            felder.kannBewegen(spieler.spieler.XPositionGeben(),spieler.spieler.YPositionGeben(),spieler.spieler.AusrichtungGeben())){
             spieler.Bewegen();}
             break;
           case KeyEvent. VK_LEFT:
             spieler. RichtungSetzen ('W');
-            if(spieler.spieler.XPositionGeben() != randsymbol.XMinGeben()){
+            if(spieler.spieler.XPositionGeben() != randsymbol.XMinGeben() && 
+            felder.kannBewegen(spieler.spieler.XPositionGeben(),spieler.spieler.YPositionGeben(),spieler.spieler.AusrichtungGeben())){
             spieler.Bewegen();}
             break;
           case KeyEvent. VK_RIGHT:
             spieler. RichtungSetzen ('O');
-            if(spieler.spieler.XPositionGeben() != randsymbol.XMaxGeben()){
+            if(spieler.spieler.XPositionGeben() != randsymbol.XMaxGeben()&& 
+            felder.kannBewegen(spieler.spieler.XPositionGeben(),spieler.spieler.YPositionGeben(),spieler.spieler.AusrichtungGeben())){
             spieler.Bewegen();}
             break;
           case KeyEvent. VK_UP:
             spieler. RichtungSetzen ('N');
-            if(spieler.spieler.YPositionGeben() != randsymbol.YMinGeben()){
+            if(spieler.spieler.YPositionGeben() != randsymbol.YMinGeben() && 
+            felder.kannBewegen(spieler.spieler.XPositionGeben(),spieler.spieler.YPositionGeben(),spieler.spieler.AusrichtungGeben())){
             spieler.Bewegen();}
             break;
           default:
