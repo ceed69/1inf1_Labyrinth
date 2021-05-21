@@ -46,4 +46,23 @@ public class SPIELER
     {
         spieler. AusrichtungSetzen (richtungNeu);
     }
+    
+    void Collision(char richtung){
+    switch (richtung)
+        {
+          case 'O':
+            
+            break;
+          case 'N':
+            
+            break;
+          case 'W':
+            
+            break;
+          case 'S':
+            
+            break;
+        }
+    
+    }
 }

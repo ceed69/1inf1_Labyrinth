@@ -13,14 +13,14 @@ public class SPIEL
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     SPIELER spieler;
-
+    RANDSYMBOL randsymbol;
     /**
      * Konstruktor für Objekte der Klasse SPIEL
      */
     public SPIEL()
     {
+        randsymbol = new RANDSYMBOL();
         spieler = new SPIELER (0, 0, 'O');
-        
         OBERFLAECHE. FensterGeben (). addKeyListener (new KeyAdapter() {
             /**
              * Gibt die Taste an die eigentliche Aktionsmethode weiter.
@@ -39,19 +39,23 @@ public class SPIEL
         {
           case KeyEvent. VK_DOWN:
             spieler. RichtungSetzen ('S');
-            spieler.Bewegen();
+            if(spieler.spieler.YPositionGeben() != randsymbol.YMaxGeben()){
+            spieler.Bewegen();}
             break;
           case KeyEvent. VK_LEFT:
             spieler. RichtungSetzen ('W');
-            spieler.Bewegen();
+            if(spieler.spieler.XPositionGeben() != randsymbol.XMinGeben()){
+            spieler.Bewegen();}
             break;
           case KeyEvent. VK_RIGHT:
             spieler. RichtungSetzen ('O');
-            spieler.Bewegen();
+            if(spieler.spieler.XPositionGeben() != randsymbol.XMaxGeben()){
+            spieler.Bewegen();}
             break;
           case KeyEvent. VK_UP:
             spieler. RichtungSetzen ('N');
-            spieler.Bewegen();
+            if(spieler.spieler.YPositionGeben() != randsymbol.YMinGeben()){
+            spieler.Bewegen();}
             break;
           default:
             //System. out. println ("Taste: " + (0 + (int) welche));
