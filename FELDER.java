@@ -14,13 +14,15 @@ public class FELDER
         for (int x = 0; x < arrwand. length; x++){
             for (int y = 0; y < arrwand. length; y++)
             {if(arrwand[x][y] != null){
-                arrwand[x][y].PositionSetzen(x,y);
+                arrwand[x][y].PositionSetzen(x -11,y-11);
             }
             else{}
         }
     }
     }
     boolean kannBewegen(int x, int y, char richtung){
+    x = x+11;
+    y = y+11;
     switch (richtung)
         {
           case 'O':
