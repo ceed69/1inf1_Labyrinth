@@ -5,10 +5,10 @@ public class FELDER
     
     public FELDER()
     {
-        arrwand[5][8] = new WAND();
-        arrwand[5][9] = new WAND();
-        arrwand[4][8] = new WAND();
         paint();
+    }
+    public void neue_Wand(int x, int y){
+    arrwand[x][y] = new WAND();
     }
     void paint(){
         for (int x = 0; x < arrwand. length; x++){
@@ -19,6 +19,7 @@ public class FELDER
             else{}
         }
     }
+
     }
     boolean kannBewegen(int x, int y, char richtung){
     x = x+11;

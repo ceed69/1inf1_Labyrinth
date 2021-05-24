@@ -27,7 +27,7 @@ public class WAND
             public void paintComponent (Graphics g)
             {
                 g. clearRect (0, 0, groesse, groesse);
-                g. setColor (Color. yellow);
+                g. setColor (Color. black);
                 g. fillRect (0, 0, groesse - 1, groesse - 1);
                 g. setColor (new Color (50, 200, 0));
             }
