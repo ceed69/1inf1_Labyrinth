@@ -1,14 +1,14 @@
 public class SPIELER
 {
     SPIELERSYMBOL spieler;
-    
+    boolean hatSchluessel = false;
     SPIELER (int x, int y, char richtung)
     {
-        spieler = new SPIELERSYMBOL ();
+        spieler = new SPIELERSYMBOL (); 
         spieler. AusrichtungSetzen (richtung);
         spieler. PositionSetzen(x, y);        
     }
-    
+
     /**
      * Bewegt die Schlange ein Feld in der eingestellten Richtung.
      */
@@ -22,22 +22,22 @@ public class SPIELER
         yalt = y;
         switch (spieler. AusrichtungGeben())
         {
-          case 'O':
+            case 'O':
             x += 1;
             break;
-          case 'N':
+            case 'N':
             y -= 1;
             break;
-          case 'W':
+            case 'W':
             x -= 1;
             break;
-          case 'S':
+            case 'S':
             y += 1;
             break;
         }
         spieler. PositionSetzen (x, y);
     }
-    
+
     /**
      * Setzt die Bewegunsrichtung der Schlange.
      * @param richtungNeu (neue) Bewegungsrichtung
@@ -46,23 +46,31 @@ public class SPIELER
     {
         spieler. AusrichtungSetzen (richtungNeu);
     }
-    
+
     void Collision(char richtung){
-    switch (richtung)
+        switch (richtung)
         {
-          case 'O':
-            
+            case 'O':
+
             break;
-          case 'N':
-            
+            case 'N':
+
             break;
-          case 'W':
-            
+            case 'W':
+
             break;
-          case 'S':
-            
+            case 'S':
+
             break;
         }
+
+    }
     
+    void schluesselAufheben(){
+        boolean hatSchluessel = true;
+    }
+    
+    boolean returnHatSchluessel(){
+        return hatSchluessel;
     }
 }

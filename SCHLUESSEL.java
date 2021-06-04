@@ -1,10 +1,9 @@
 import java.awt.*;
 import javax. swing. *;
-public class WAND
-{
-        /** Das Anzeigefenster. */
+public class SCHLUESSEL
+{   
     private JFrame fenster;
-    
+
     /** Anzeigegröße für das Rumpfelement */
     private static final int groesse = OBERFLAECHE. RasterGroesseGeben ();
 
@@ -12,16 +11,14 @@ public class WAND
     private int x;
     private int y;
     private JComponent anzeige;
-
-    public WAND()
-    {
+    public SCHLUESSEL(){
         fenster = OBERFLAECHE. FensterGeben ();
         anzeige = new JComponent () {
             // Stellt das Rumpfelement auf dem Fenster dar.
             public void paintComponent (Graphics g)
             {
                 g. clearRect (0, 0, groesse, groesse);
-                g. setColor (Color. black);
+                g. setColor (Color. red);
                 g. fillRect (0, 0, groesse - 1, groesse - 1);
                 g. setColor (new Color (50, 200, 0));
             }
@@ -32,7 +29,8 @@ public class WAND
         fenster. add (anzeige, 0);
         PositionSetzen (0, 0);
     }
-     public void PositionSetzen (int x, int y)
+
+    public void PositionSetzen (int x, int y)
     {
         this. x = x;
         this. y = y;

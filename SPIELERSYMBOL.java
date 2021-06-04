@@ -1,17 +1,12 @@
 import java.awt.*;
 import java. awt. geom. *;
 import javax. swing. *;
-/**
- * Beschreiben Sie hier die Klasse SPIELERSYMBOL.
- * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
- */
-public class SPIELERSYMBOL
-{
+
+public class SPIELERSYMBOL 
+{ 
     /** Das Anzeigefenster. */
     private JFrame fenster;
-    
+
     /** Anzeigegröße für das Rumpfelement */
     private static final int groesse = OBERFLAECHE. RasterGroesseGeben ();
 
@@ -21,7 +16,7 @@ public class SPIELERSYMBOL
     private int y;
     public char ausrichtung;
     private JComponent anzeige;
-    
+
     SPIELERSYMBOL()
     {
         fenster = OBERFLAECHE. FensterGeben ();
@@ -95,19 +90,19 @@ public class SPIELERSYMBOL
     {
         switch (ausrichtung)
         {
-          case 'O':
+            case 'O':
             anzeige. setSize (groesse * 2, groesse);
             anzeige. setLocation (OBERFLAECHE. FensterBreiteGeben () / 2 + x * groesse, OBERFLAECHE. FensterHoeheGeben () / 2 + y * groesse);
             break;
-          case 'W':
+            case 'W':
             anzeige. setSize (groesse * 2, groesse);
             anzeige. setLocation (OBERFLAECHE. FensterBreiteGeben () / 2 + (x - 1) * groesse, OBERFLAECHE. FensterHoeheGeben () / 2 + y * groesse);
             break;
-          case 'S':
+            case 'S':
             anzeige. setSize (groesse, groesse * 2);
             anzeige. setLocation (OBERFLAECHE. FensterBreiteGeben () / 2 + x * groesse, OBERFLAECHE. FensterHoeheGeben () / 2 + y * groesse);
             break;
-          case 'N':
+            case 'N':
             anzeige. setSize (groesse, groesse * 2);
             anzeige. setLocation (OBERFLAECHE. FensterBreiteGeben () / 2 + x * groesse, OBERFLAECHE. FensterHoeheGeben () / 2 + (y - 1) * groesse);
             break;
@@ -164,7 +159,7 @@ public class SPIELERSYMBOL
     {
         return ausrichtung;
     }
-    
+
     /**
      * Entfernt die Figur aus der Anzeige
      */

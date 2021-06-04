@@ -1,13 +1,7 @@
 import java. awt. *;
-import javax. swing. *;
+import javax. swing. *;  
 
-/**
- * Verwaltet das Ausgabefenster.
- * 
- * @author Albert Wiedemann
- * @version 1.0
- */
-class OBERFLAECHE
+public class OBERFLAECHE
 {
     /** Diese Werte kann man bearbeiten um das Fenster zu verändern bitte andere Variablen nicht ändern */
 
@@ -109,8 +103,8 @@ class OBERFLAECHE
     {
         return hoeheFenster;
     }
+
     static Color SteifenFarbeGeben(){
         return farbeStreifen;
     }
 }
-

@@ -1,14 +1,7 @@
 import java.awt.*;
 import javax. swing. *;
 
-/**
- * Der Rand um das Spielfeld.
- * Das Fenster wird bei Bedarf generiert.
- *
- * @author Albert Wiedemann
- * @version 1.0
- */
-class RANDSYMBOL
+public class RANDSYMBOL
 {
     /** Das Anzeigefenster. */
     private JFrame fenster;
@@ -130,4 +123,3 @@ class RANDSYMBOL
         return yMin;
     }
 }
-
