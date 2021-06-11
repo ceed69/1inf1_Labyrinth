@@ -39,23 +39,24 @@ public class FELDER
         }
 
     }
+
     boolean kannBewegen(int x, int y, char richtung){
         x = x+11;
         y = y+11;
         switch (richtung)
         {
             case 'O':
-            x += 1;
-            break;
+                x += 1;
+                break;
             case 'N':
-            y -= 1;
-            break;
+                y -= 1;
+                break;
             case 'W':
-            x -= 1;
-            break;
+                x -= 1;
+                break;
             case 'S':
-            y += 1;
-            break;
+                y += 1;
+                break;
         }
         if(arrwand[x][y] != null){
             return false;
@@ -64,12 +65,13 @@ public class FELDER
             return true;
         }
     }
+
     boolean hat_schluessel(int x, int y){
-    if(arrschluessel ==null){
-    return false;
-    }
-    else{
-    return true;
-    }
+        if(arrschluessel ==null){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }

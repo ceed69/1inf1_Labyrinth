@@ -14,9 +14,9 @@ public class OBERFLAECHE
     /** Name des Anzeigefensters */
     private static final String titelFenster = "Labyrinth";
     /** Farbe des Hintegrundes */
-    private static final Color farbeHintergrund = new Color (255, 255, 255);
+    private static final Color farbeHintergrund = new Color (145,100,100);
     /** Farbe der Streifen und des Randes */
-    private static final Color farbeStreifen = new Color (0, 0, 0);
+    private static final Color farbeStreifen = new Color (0, 0, 0); 
 
     /** --------------------------------------------------------------------------------------------- */
 
@@ -35,33 +35,6 @@ public class OBERFLAECHE
         fenster. getContentPane (). setBackground (farbeHintergrund);
         Insets i = fenster.getInsets();
         fenster. setSize (breiteFenster, hoeheFenster + i.top);         // Ausgleich für Fenstertitel
-        JComponent hintergrund = new JComponent ()
-            {
-                /**
-                 * Zeichnet das Hintergrundmuster.
-                 */
-                public void paintComponent (Graphics g)
-                {
-                    g. setColor (farbeStreifen);
-                    for (int i = 1; i <= hoeheFenster / (rasterGroesse * 2); i++)
-                    {
-                        g. drawLine (0, hoeheFenster / 2 + i * rasterGroesse, breiteFenster - 1, hoeheFenster / 2 + i * rasterGroesse);
-                        g. drawLine (0, hoeheFenster / 2 - i * rasterGroesse, breiteFenster - 1, hoeheFenster / 2 - i * rasterGroesse);
-                    }
-                    for (int i = 1; i <= breiteFenster / (rasterGroesse * 2); i++)
-                    {
-                        g. drawLine (breiteFenster / 2 + i * rasterGroesse, 0, breiteFenster / 2 + i * rasterGroesse, hoeheFenster - 1);
-                        g. drawLine (breiteFenster / 2 - i * rasterGroesse, 0, breiteFenster / 2 - i * rasterGroesse, hoeheFenster - 1);
-                    }
-                    g. setColor (farbeStreifen);
-                    g. drawLine (0, hoeheFenster / 2, breiteFenster - 1, hoeheFenster / 2);
-                    g. drawLine (breiteFenster / 2, 0, breiteFenster / 2, hoeheFenster - 1);
-                }
-            };
-        hintergrund. setVisible (true);
-        hintergrund. setSize (breiteFenster, hoeheFenster);
-        hintergrund. setLocation (0, 0);
-        fenster. add (hintergrund);
     }
 
     /**

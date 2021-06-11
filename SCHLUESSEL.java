@@ -19,7 +19,7 @@ public class SCHLUESSEL
             {
                 g. clearRect (0, 0, groesse, groesse);
                 g. setColor (Color. red);
-                g. fillRect (0, 0, groesse - 1, groesse - 1);
+                g. fillRect (0, 0, groesse, groesse);
                 g. setColor (new Color (50, 200, 0));
             }
 

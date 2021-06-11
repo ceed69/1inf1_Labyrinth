@@ -44,34 +44,10 @@ public class SPIELERSYMBOL
                     default:
                     //nix
                 }
-                g. setColor (Color. yellow);
-                g. fillRect (0, 0, groesse / 2, groesse - 1);
-                g. fillArc (0, 0, groesse - 1, groesse - 1, -90, 180);
-                g. setColor (Color. white);
-                g. fillOval (groesse / 2 - 8, 4, 8, 8);
-                g. fillOval (groesse / 2 - 8, groesse - 12, 8, 8);
-                g. setColor (new Color (50, 200, 0));
-                g. drawLine (0, 0, groesse / 2, 0);
-                g. drawLine (1, 1, groesse / 2, 1);
-                g. drawLine (0, 0, 0, groesse - 1);
-                g. drawLine (1, 1, 1, groesse - 3);
-                g. drawLine (0, groesse - 1, groesse / 2, groesse - 1);
-                g. drawLine (1, groesse - 2, groesse / 2, groesse - 2);
-                g. drawArc (0, 0, groesse - 1, groesse - 1, -90, 180);
-                g. drawArc (1, 1, groesse - 3, groesse - 3, -90, 180);
-                g. drawOval (groesse / 2 - 8, 4, 8, 8);
-                g. drawOval (groesse / 2 - 8, groesse - 12, 8, 8);
-                g. setColor (Color. black);
-                g. fillOval (groesse / 2 - 6, 6, 4, 4);
-                g. fillOval (groesse / 2 - 6, groesse - 10, 4, 4);
-                g. setColor (new Color (200, 0, 0));
-                g. drawLine (groesse, groesse / 2 - 1, groesse * 5 / 4, groesse / 2 - 1);
-                g. drawLine (groesse, groesse / 2, groesse * 5 / 4, groesse / 2);
-                g. drawLine (groesse, groesse / 2 + 1, groesse * 5 / 4, groesse / 2 + 1);
-                g. drawLine (groesse * 5 / 4, groesse / 2, groesse * 6 / 4, groesse * 3 / 4);
-                g. drawLine (groesse * 5 / 4, groesse / 2 + 1, groesse * 6 / 4, groesse * 3 / 4 + 1);
-                g. drawLine (groesse * 5 / 4, groesse / 2, groesse * 6 / 4, groesse * 1 / 4);
-                g. drawLine (groesse * 5 / 4, groesse / 2 - 1, groesse * 6 / 4, groesse * 1 / 4 - 1);
+                g. setColor (Color. blue);
+                g. fillRect (0, 0, groesse, groesse);
+                //g. fillArc (0, 0, groesse - 1, groesse - 1, -90, 180);
+                
                 g2. setTransform (old);
             }
         };
