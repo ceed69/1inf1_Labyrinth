@@ -3,8 +3,8 @@ public class FELDER
     WAND wand;
     WAND[][] arrwand = new WAND[22] [22];
 
-    SCHLUESSEL schluessel;
-    SCHLUESSEL[][] arrschluessel = new SCHLUESSEL[22][22];
+    public SCHLUESSEL schluessel;
+    public SCHLUESSEL[][] arrschluessel = new SCHLUESSEL[22][22];
 
     public FELDER()
     {

@@ -12,6 +12,8 @@ public class LEVEL
     FELDER felder;
     int x = 0;
     int y = 0;
+    int Schlüsselx;
+    int Schlüssely;
     public LEVEL(int levelNummer){
         //Neue Oberfläche machen
         randsymbol = new RANDSYMBOL();
@@ -59,6 +61,10 @@ public class LEVEL
             default:
             //System. out. println ("Taste: " + (0 + (int) welche));
         }
+        if(spieler.spieler.XPositionGeben() -11 == Schlüsselx && spieler.spieler.YPositionGeben() -11 == Schlüssely){
+        Schlüssel_entfernen(spieler.spieler.XPositionGeben(), spieler.spieler.YPositionGeben());
+        }
+        else{}
     }
 
     void Level_lesen(){ 
@@ -83,6 +89,8 @@ public class LEVEL
                         break;
                         case 'K':
                         felder.neuer_Schluessel(x, y);
+                        Schlüsselx = x;
+                        Schlüssely = y;
                         break;
                     }
                 }  
@@ -99,5 +107,8 @@ public class LEVEL
     void Spieler_machen(int x, int y){
         System.out.println(" "+ x +" "+ y);
         spieler = new SPIELER (x, y, 'O');
+    }
+    void Schlüssel_entfernen(int x, int y){
+    felder.arrschluessel[x][y].Entfernen ();
     }
 }
