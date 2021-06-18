@@ -61,10 +61,11 @@ public class LEVEL
             default:
             //System. out. println ("Taste: " + (0 + (int) welche));
         }
-        if(spieler.spieler.XPositionGeben() -11 == Schlüsselx && spieler.spieler.YPositionGeben() -11 == Schlüssely){
-        Schlüssel_entfernen(spieler.spieler.XPositionGeben(), spieler.spieler.YPositionGeben());
+        if(spieler.spieler.YPositionGeben() + 11 == Schlüssely){
+            if(spieler.spieler.XPositionGeben() + 11 == Schlüsselx){
+                Schlüssel_entfernen(Schlüsselx, Schlüssely);
+            }
         }
-        else{}
     }
 
     void Level_lesen(){ 
