@@ -66,6 +66,8 @@ public class LEVEL
                 Schlüssel_entfernen(Schlüsselx, Schlüssely);
             }
         }
+        //felder.lichtup();
+        //lichter adden ^^
     }
 
     void Level_lesen(){ 
@@ -84,14 +86,17 @@ public class LEVEL
                         felder.neue_Wand(x,y);
                         break;
                         case ' ':
+                        felder.neues_Licht(x, y);
                         break;
                         case 'S':
                         spieler = new SPIELER (x - 11, y -11, 'O');
+                        felder.neues_Licht(x, y);
                         break;
                         case 'K':
                         felder.neuer_Schluessel(x, y);
                         Schlüsselx = x;
                         Schlüssely = y;
+                        felder.neues_Licht(x, y);
                         break;
                     }
                 }  

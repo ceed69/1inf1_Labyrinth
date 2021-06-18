@@ -1,33 +1,68 @@
-
-/**
- * Beschreiben Sie hier die Klasse LICHT.
- * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
- */
+import java.awt.*;
+import javax. swing. *;
 public class LICHT
 {
-    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
-    private int x;
+        /** Das Anzeigefenster. */
+    private JFrame fenster;
+    
+    /** Anzeigegröße für das Rumpfelement */
+    private static final int groesse = OBERFLAECHE. RasterGroesseGeben ();
 
-    /**
-     * Konstruktor für Objekte der Klasse LICHT
-     */
+    /** Interna */
+    private int x;
+    private int y;
+    private JComponent anzeige;
+
     public LICHT()
     {
-        // Instanzvariable initialisieren
-        x = 0;
+        fenster = OBERFLAECHE. FensterGeben ();
+        anzeige = new JComponent () {
+            // Stellt das Rumpfelement auf dem Fenster dar.
+            public void paintComponent (Graphics g)
+            {
+                g. clearRect (0, 0, groesse, groesse);
+                g. setColor (new Color (0f, 0f, 0f));
+                g. fillRect (0, 0, groesse, groesse);
+                //g. setColor (new Color (50, 200, 0));
+            }
+
+        };
+        anzeige. setVisible (true);
+        anzeige. setSize (groesse, groesse);
+        fenster. add (anzeige, 0);
+        PositionSetzen (0, 0);
+    }
+     public void PositionSetzen (int x, int y)
+    {
+        this. x = x;
+        this. y = y;
+        anzeige. setLocation (OBERFLAECHE. FensterBreiteGeben () / 2 + x * groesse, OBERFLAECHE. FensterHoeheGeben () / 2 + y * groesse);
     }
 
     /**
-     * Ein Beispiel einer Methode - ersetzen Sie diesen Kommentar mit Ihrem eigenen
-     * 
-     * @param  y    ein Beispielparameter für eine Methode
-     * @return        die Summe aus x und y
+     * Gibt den X-Wert der Position des Kopfelements.
+     * @return x-Position
      */
-    public int beispielMethode(int y)
+    int XPositionGeben ()
     {
-        // tragen Sie hier den Code ein
-        return x + y;
+        return x;
+    }
+
+    /**
+     * Gibt den Y-Wert der Position des Kopfelements.
+     * @return y-Position
+     */
+    int YPositionGeben ()
+    {
+        return y;
+    }
+
+    /**
+     * Entfernt die Figur aus der Anzeige
+     */
+    public void Entfernen ()
+    {
+        (OBERFLAECHE. FensterGeben ()). remove (anzeige);
+        (OBERFLAECHE. FensterGeben ()). repaint();
     }
 }
