@@ -67,6 +67,7 @@ public class LEVEL
             }
         }
         //felder.lichtup();
+        light(spieler.spieler.XPositionGeben() + 11, spieler.spieler.YPositionGeben() + 11);
         //lichter adden ^^
     }
 
@@ -90,7 +91,7 @@ public class LEVEL
                         break;
                         case 'S':
                         spieler = new SPIELER (x - 11, y -11, 'O');
-                        felder.neues_Licht(x, y);
+                        
                         break;
                         case 'K':
                         felder.neuer_Schluessel(x, y);
@@ -104,6 +105,7 @@ public class LEVEL
                 //System.out.println(" ");
             }
             myReader.close();
+            felder.lichtup();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -116,5 +118,18 @@ public class LEVEL
     }
     void Schlüssel_entfernen(int x, int y){
     felder.arrschluessel[x][y].Entfernen ();
+    }
+    void light(int x,int y){
+    int radius = 2;
+    for(int xrad = 0-radius; xrad < radius + 1; xrad++){
+    for(int yrad = 0-radius; yrad < radius + 1; yrad++){
+    if ((x + xrad >= 0 && y + yrad >= 0) && (x + xrad <= 22 && y + yrad <= 22)){
+    if(felder.arrlicht[x + xrad][y + yrad] == null){
+    
+    }
+    else{felder.arrlicht[x + xrad][y + yrad].Entfernen();
+    }
+    }}
+    }
     }
 }
