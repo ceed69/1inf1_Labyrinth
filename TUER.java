@@ -1,6 +1,6 @@
 import java.awt.*;
 import javax. swing. *;
-public class TÜR
+public class TUER
 {
     private JFrame fenster;
 
@@ -11,7 +11,7 @@ public class TÜR
     private int x;
     private int y;
     private JComponent anzeige;
-    public TÜR()
+    public TUER()
     {
         fenster = OBERFLAECHE. FensterGeben ();
         anzeige = new JComponent () {
@@ -62,5 +62,10 @@ public class TÜR
     {
         (OBERFLAECHE. FensterGeben ()). remove (anzeige);
         (OBERFLAECHE. FensterGeben ()). repaint();
+    }
+    public void oeffnen(){
+    
+    
+    
     }
 }

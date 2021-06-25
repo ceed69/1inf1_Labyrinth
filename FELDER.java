@@ -6,6 +6,9 @@ public class FELDER
     public SCHLUESSEL schluessel;
     public SCHLUESSEL[][] arrschluessel = new SCHLUESSEL[22][22];
     
+    public TUER tuer;
+    public TUER [][] arrtuer = new TUER[22][22];
+    
     LICHT licht;
     LICHT[][] arrlicht = new LICHT[22][22];
 
@@ -20,6 +23,10 @@ public class FELDER
 
     public void neuer_Schluessel(int x, int y){
         arrschluessel[x][y] = new SCHLUESSEL();
+    }
+    
+    public void neue_Tuer(int x, int y){
+        arrtuer[x][y] = new TUER();
     }
     
     public void neues_Licht(int x, int y){
@@ -40,6 +47,14 @@ public class FELDER
             for (int y2 = 0; y2 < arrschluessel. length; y2++)
             {if(arrschluessel[x2][y2] != null){
                     arrschluessel[x2][y2].PositionSetzen(x2 -11,y2-11);
+                }
+                else{}
+            }
+        }
+        for (int x2 = 0; x2 < arrtuer. length; x2++){
+            for (int y2 = 0; y2 < arrtuer. length; y2++)
+            {if(arrtuer[x2][y2] != null){
+                    arrtuer[x2][y2].PositionSetzen(x2 -11,y2-11);
                 }
                 else{}
             }

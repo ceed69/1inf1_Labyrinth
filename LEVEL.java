@@ -14,6 +14,9 @@ public class LEVEL
     int y = 0;
     int Schlüsselx;
     int Schlüssely;
+    
+    int Tuerx;
+    int Tuery;
     public LEVEL(int levelNummer){
         //Neue Oberfläche machen
         randsymbol = new RANDSYMBOL();
@@ -99,6 +102,10 @@ public class LEVEL
                         Schlüssely = y;
                         felder.neues_Licht(x, y);
                         break;
+                        case'T':
+                        felder.neue_Tuer(x,y);
+                        Tuerx = x;
+                        Tuery = y;
                     }
                 }  
                 y = y +1;
@@ -118,6 +125,10 @@ public class LEVEL
     }
     void Schlüssel_entfernen(int x, int y){
     felder.arrschluessel[x][y].Entfernen ();
+    }
+    void Tuer_oeffnen(int x, int y){
+        if(spieler.returnHatSchluessel() == true){
+    felder.arrtuer[x][y].oeffnen();}
     }
     void light(int x,int y){
     int radius = 2;

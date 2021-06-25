@@ -73,4 +73,5 @@ public class SPIELER
     boolean returnHatSchluessel(){
         return hatSchluessel;
     }
+    
 }
