@@ -70,6 +70,7 @@ public class LEVEL
             }
         }
         //felder.lichtup();
+        felder.lichtup();
         light(spieler.spieler.XPositionGeben() + 11, spieler.spieler.YPositionGeben() + 11);
         //lichter adden ^^
     }
@@ -90,7 +91,7 @@ public class LEVEL
                         felder.neue_Wand(x,y);
                         break;
                         case ' ':
-                        felder.neues_Licht(x, y);
+                        //felder.neues_Licht(x, y);
                         break;
                         case 'S':
                         spieler = new SPIELER (x - 11, y -11, 'O');
@@ -100,7 +101,7 @@ public class LEVEL
                         felder.neuer_Schluessel(x, y);
                         Schlüsselx = x;
                         Schlüssely = y;
-                        felder.neues_Licht(x, y);
+                        //felder.neues_Licht(x, y);
                         break;
                         case'T':
                         felder.neue_Tuer(x,y);
@@ -134,13 +135,16 @@ public class LEVEL
     int radius = 2;
     for(int xrad = 0-radius; xrad < radius + 1; xrad++){
     for(int yrad = 0-radius; yrad < radius + 1; yrad++){
-    if ((x + xrad >= 0 && y + yrad >= 0) && (x + xrad <= 22 && y + yrad <= 22)){
+    if (x + xrad >= 0 && y + yrad >= 0){
+        if(x + xrad <= 21 && y + yrad <= 21){
     if(felder.arrlicht[x + xrad][y + yrad] == null){
     
     }
     else{felder.arrlicht[x + xrad][y + yrad].Entfernen();
+         felder.arrlicht[x + xrad][y + yrad] = null;
     }
     }}
     }
     }
+}
 }
