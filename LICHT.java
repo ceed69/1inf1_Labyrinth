@@ -36,7 +36,9 @@ public class LICHT
     {
         this. x = x;
         this. y = y;
+        
         anzeige. setLocation (OBERFLAECHE. FensterBreiteGeben () / 2 + x * groesse, OBERFLAECHE. FensterHoeheGeben () / 2 + y * groesse);
+        
     }
 
     /**
@@ -64,5 +66,6 @@ public class LICHT
     {
         (OBERFLAECHE. FensterGeben ()). remove (anzeige);
         (OBERFLAECHE. FensterGeben ()). repaint();
+        //this = null;
     }
 }

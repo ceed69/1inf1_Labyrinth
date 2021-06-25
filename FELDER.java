@@ -5,7 +5,7 @@ public class FELDER
 
     public SCHLUESSEL schluessel;
     public SCHLUESSEL[][] arrschluessel = new SCHLUESSEL[22][22];
-    
+
     LICHT licht;
     LICHT[][] arrlicht = new LICHT[22][22];
 
@@ -21,7 +21,7 @@ public class FELDER
     public void neuer_Schluessel(int x, int y){
         arrschluessel[x][y] = new SCHLUESSEL();
     }
-    
+
     public void neues_Licht(int x, int y){
         arrlicht[x][y] = new LICHT();
     }
@@ -46,15 +46,24 @@ public class FELDER
         }
 
     }
+
     public void lichtup(){
-                for (int x2 = 0; x2 < arrlicht. length; x2++){
-            for (int y2 = 0; y2 < arrlicht. length; y2++)
+        for (int x2 = 0; x2 < arrlicht.length; x2++){
+            for (int y2 = 0; y2 < arrlicht.length; y2++)
             {if(arrlicht[x2][y2] != null){
+                    //arrlicht[x2][y2].Entfernen();
+                    //neues_Licht(x2,y2);
+                    //arrlicht[x2][y2].PositionSetzen(x2 -11,y2-11);
+                }
+                else{
+                    neues_Licht(x2,y2);
                     arrlicht[x2][y2].PositionSetzen(x2 -11,y2-11);
                 }
-                else{}
+                //arrlicht[x2][y2].PositionSetzen(x2 -11,y2-11);
+
             }
         }
+        
     }
 
     boolean kannBewegen(int x, int y, char richtung){
