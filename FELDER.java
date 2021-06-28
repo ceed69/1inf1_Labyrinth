@@ -111,12 +111,12 @@ public class FELDER
         }
     }
 
-    boolean hat_schluessel(int x, int y){
-        if(arrschluessel ==null){
-            return false;
+    boolean hat_schluessel(){
+        if(arrschluessel.length == 0){
+            return true;
         }
         else{
-            return true;
+            return false;
         }
     }
 }

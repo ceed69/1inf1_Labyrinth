@@ -64,6 +64,10 @@ public class TUER
         (OBERFLAECHE. FensterGeben ()). repaint();
     }
     public void oeffnen(){
+    //nächstes Level öffnen
+    System. out. println ("3");
+    System.out.println("neue Welt geöffnet!!");
+    Entfernen ();
     
     
     
