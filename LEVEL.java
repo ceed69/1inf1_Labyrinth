@@ -12,9 +12,11 @@ public class LEVEL
     FELDER felder;
     int x = 0;
     int y = 0;
+    
     int Schlüsselx;
     int Schlüssely;
-
+    boolean hatSchluessel = false;
+    
     int Tuerx;
     int Tuery;
     public LEVEL(int levelNummer){
@@ -67,6 +69,7 @@ public class LEVEL
         if(spieler.spieler.YPositionGeben() + 11 == Schlüssely){
             if(spieler.spieler.XPositionGeben() + 11 == Schlüsselx){
                 Schlüssel_entfernen(Schlüsselx, Schlüssely);
+                hatSchluessel = true;
             }
         }
 
@@ -77,7 +80,7 @@ public class LEVEL
             }
         }
         //felder.lichtup();
-        //felder.lichtup();
+        felder.lichtup();
         light(spieler.spieler.XPositionGeben() + 11, spieler.spieler.YPositionGeben() + 11);
         //lichter adden ^^
 
@@ -139,9 +142,10 @@ public class LEVEL
     }
 
     void Tuer_oeffnen(int x, int y){
-            if(felder.hat_schluessel() == true){
+            if(hatSchluessel == true){
             //System. out. println ("2");
             felder.arrtuer[x][y].oeffnen();
+            hatSchluessel = false;
             //felder.arrtuer[x][y] = null;
         }
         
