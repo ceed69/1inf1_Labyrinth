@@ -13,6 +13,8 @@ public class LEVEL
     int x = 0;
     int y = 0;
     
+    int levelnummer;
+    
     int Schlüsselx;
     int Schlüssely;
     boolean hatSchluessel = false;
@@ -21,9 +23,15 @@ public class LEVEL
     int Tuery;
     public LEVEL(int levelNummer){
         //Neue Oberfläche machen
+        
+        this.levelnummer = levelnummer;
+        level(levelnummer);
+    }
+    
+    void level(int levelNummer){
         randsymbol = new RANDSYMBOL();
         //LEVEL Einlesen
-        Level_lesen();
+        Level_lesen(levelNummer);
         //Spieler und Felder einfügen
         felder.paint();
         //Key Listener hinzufügen
@@ -86,10 +94,10 @@ public class LEVEL
 
     }
 
-    void Level_lesen(){ 
+    void Level_lesen(int levelnummer){ 
         felder = new FELDER();
         try {
-            File myObj = new File("LVL/Level_1.txt");
+            File myObj = new File("LVL/Level_" + levelnummer + ".txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -146,6 +154,7 @@ public class LEVEL
             //System. out. println ("2");
             felder.arrtuer[x][y].oeffnen();
             hatSchluessel = false;
+            NeuesLevel();
             //felder.arrtuer[x][y] = null;
         }
         
@@ -167,5 +176,17 @@ public class LEVEL
                     }}
             }
         }
+    }
+    
+    void NeuesLevel(){
+    spieler = null;  
+    int x = 0;
+    int y = 0;
+    felder.purge();
+    hatSchluessel = false;
+    spieler = null;  
+    randsymbol = null;
+    felder = null;
+    level(levelnummer + 1);
     }
 }
