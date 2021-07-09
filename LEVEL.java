@@ -24,11 +24,11 @@ public class LEVEL
     public LEVEL(int levelNummer){
         //Neue Oberfläche machen
         
-        this.levelnummer = levelnummer;
+        this.levelnummer = levelNummer;
         level(levelnummer);
     }
     
-    void level(int levelNummer){
+    public void level(int levelNummer){
         randsymbol = new RANDSYMBOL();
         //LEVEL Einlesen
         Level_lesen(levelNummer);
