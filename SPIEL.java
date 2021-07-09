@@ -4,6 +4,6 @@ public class SPIEL
     int level_nummer = 1;
     public SPIEL(){
         level = new LEVEL(level_nummer);
-
+        
     }
 }

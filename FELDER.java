@@ -119,4 +119,30 @@ public class FELDER
             return false;
         }
     }
+    public void purge(){
+    for (int x1 = 0; x1 < arrwand. length; x1++){
+            for (int y1 = 0; y1 < arrwand. length; y1++)
+            {
+            if(arrwand[x1][y1] != null){
+                    arrwand[x1][y1].Entfernen();
+                    arrwand[x1][y1] = null;
+                }
+            
+            
+            else if(arrschluessel[x1][y1] != null){
+                    arrschluessel[x1][y1].Entfernen();
+                    arrschluessel[x1][y1] = null;
+                }
+            else if(arrtuer[x1][y1] != null){
+                    arrtuer[x1][y1].Entfernen();
+                    arrtuer[x1][y1] = null;
+                }
+            else if(arrlicht[x1][y1] != null){
+                    arrlicht[x1][y1].Entfernen();
+                    arrlicht[x1][y1] = null;
+                }
+                else{}
+            }
+        }
+    }
 }
